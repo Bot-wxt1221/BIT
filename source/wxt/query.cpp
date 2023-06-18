@@ -30,22 +30,25 @@ signed main(){
 	freopen("query.in","r",stdin);
 	freopen("query.out","w",stdout);
 	#endif
-    n=read();m=read();
-    for(int i=1;i<=n;i++){
-        a[i]=read();
-        a[i]+=a[i-1];
-    }
-    for(int i=1;i<=n;i++){
-        tree[i]=a[i]-a[i-lowbit(i)];
-    }
-    for(int i=1;i<=m;i++){
-        int op=read();
-        int x=read();
-        int y=read();
-        if(op==1){
-            change(x,y);
-        }else{
-            printf("%lld\n",ques(y)-ques(x-1));
+    int t=read();
+    while(t--){
+        n=read();m=read();
+        for(int i=1;i<=n;i++){
+            a[i]=read();
+            a[i]+=a[i-1];
+        }
+        for(int i=1;i<=n;i++){
+            tree[i]=a[i]-a[i-lowbit(i)];
+        }
+        for(int i=1;i<=m;i++){
+            int op=read();
+            int x=read();
+            int y=read();
+            if(op==1){
+                change(x,y);
+            }else{
+                printf("%lld\n",ques(y)-ques(x-1));
+            }
         }
     }
 	return 0;
