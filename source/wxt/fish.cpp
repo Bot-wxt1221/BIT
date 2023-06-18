@@ -14,6 +14,7 @@ int dp[200005];
 int seq[200005];
 int dis[200005];
 int tree[200005];
+int disto[200005];
 int n;
 class backn{
 	public:
@@ -66,6 +67,7 @@ void dfs(int now,int fa,int dep){
 	if(now==1){
 		dp[now]=q[now];
 	}
+    disto[now]=dis[dep];
 	a.push(add(n-dep+1,dp[now]));
 	for(int i=fir[now];i!=-1;i=nxt[i]){
 		if(fa==v[i]){
@@ -111,7 +113,7 @@ signed main(){
 		if(dp[i]-q[i]==0x3f3f3f3f3f3f3f3f){
 			printf("-1 ");
 		}else
-			printf("%lld ",dp[i]-q[i]);
+			printf("%lld ",dp[i]-q[i]+disto[i]);
 	}
 	return 0;
 }
