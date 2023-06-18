@@ -30,7 +30,6 @@ signed main(){
 	freopen("query.in","r",stdin);
 	freopen("query.out","w",stdout);
 	#endif
-    freopen("query1.in","r",stdin);
     int t=read();
     while(t--){
         n=read();m=read();
