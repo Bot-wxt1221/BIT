@@ -76,8 +76,8 @@ struct BST{
         return;
     }
 
-    int getAns(register int pos,long long x){
-        long long ans=0x3f3f3f3f3f3f3f3f;
+    long long getAns(register int pos,long long x){
+        long long ans=0x3f3f3f3f3f3f3f3fll;
         pos=size-pos+1;
         while(pos){
             ans=std::min(ans,tree[pos].max);
@@ -110,7 +110,7 @@ void dfs(int u,int p,int i){
     return;
 }
 
-signed main(){
+int main(){
 	#ifndef ONLINE_JUDGE
 	freopen("fish.in", "r", stdin);
 	freopen("fish.out", "w", stdout);
@@ -137,7 +137,7 @@ signed main(){
     dfs(1,1,1);
 
     for(i=1;i<=n;++i){
-        print(dp[i]>=0x3f3f3f3f?-1:dp[i]);putchar(' ');
+        print(dp[i]>=0x3f3f3f3f3f3f3f3fll?-1:dp[i]);putchar(' ');
     }
 
 	#ifndef ONLINE_JUDGE
